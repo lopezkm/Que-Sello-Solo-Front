@@ -1,0 +1,63 @@
+.form-data-container {
+    background-color: lightgray;
+}
+.personlaInfo-title {
+    font-size: 3rem;
+    width: 98%;
+    color: white;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 2rem;
+    margin: 1rem 0 0 0;
+    text-align: center;
+}
+.backgroudColor-container {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    width: 98%;
+    display:flex;
+    justify-content: center;
+    background:linear-gradient(to bottom, blue 0%, blue 70%, lightgray 70%, lightgray 100%);
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem 0 1rem 0;
+    background-color: white;
+    margin-top: 0.5rem;
+}
+.form-control-personalInfo {
+    margin: 1rem 0 0 2rem;
+    height: 2rem;
+    width: 90%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.form-control-personalInfo:focus {
+    outline: none;
+}
+.button-personalInfo {
+   display: flex;
+   align-self: flex-end;
+   margin-right: 1.5rem;
+   border-radius: 5px;
+   background-color: black;
+   color: white;
+}
+.button-personalInfo:focus {
+    outline: none; 
+} 
+
+.disable {
+    display: none;
+}
+.p-personalInfo {
+    margin-top: -0.5rem;
+    margin-left: 2rem;
+    font-size: 0.8rem;
+    color: red;
+}
