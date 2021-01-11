@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+import emailjs from 'emailjs-com';
 
 export default function FormPersonalData() {
 
@@ -20,18 +20,19 @@ export default function FormPersonalData() {
     function onSubmit(e) {
         e.preventDefault();
         const  {firstName, lastName, email, phoneNumber} = personalInfo;
-        axios.post("/emailOwner", {
-            firstName,
-            lastName,
-            email,
-            phoneNumber,
-            stamp
-        })
-        axios.post("/emailUser", {
-            email,
-            firstName,
-            stampClient
-        })
+        /*const link = 'https://api.whatsapp.com/send?phone=54'; */
+        emailjs.sendForm('quesello','mail_owner', e.target, 'user_zn2810wYzHJQG8AwVNida')
+		.then((response) => {
+				   console.log('SUCCESS!', response.status, response.text);
+		}, (err) => {
+				   console.log('FAILED...', err);
+        });
+        emailjs.sendForm('quesello','mail_buyer', e.target, 'user_zn2810wYzHJQG8AwVNida')
+		.then((response) => {
+				   console.log('SUCCESS!', response.status, response.text);
+		}, (err) => {
+				   console.log('FAILED...', err);
+		});
         alert(`Listo ${firstName}, tu pedido se realizo con éxito. Te llegará un correo de confirmación a ${email}, y luego te contactaremos al ${phoneNumber} para coordinar los pasos a seguir. Muchas gracias por tu pedido.`);
         setFlag(true);        
     }

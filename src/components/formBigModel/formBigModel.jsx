@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import  { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addImage, addImageClient } from '../../actions/index.js';
+import { addImage, addImageClient } from '../../Redux/actions/index.js';
 import Trodat4910 from '../../images/trodat4910.jpeg';
 import Trodat4911 from '../../images/trodat4911.jpeg';
 import Trodat3911 from '../../images/trodat3911.jpeg';
